@@ -1,170 +1,1123 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-
-<meta charset="UTF-8">
-<title>نحو مستقبل رقمي لتدريب </title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
-
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:'Cairo',sans-serif;
-  color:#fff;
-  background:#000;
-  overflow-x:hidden;
-}
-
-/* خلفية سينمائية */
-.bg{
-  position:fixed; inset:0;
-  background:url('https://images.unsplash.com/photo-1520975916090-3105956dac38') center/cover;
-  filter:blur(18px) brightness(.35);
-  z-index:-2;
-}
-.overlay{
-  position:fixed; inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.55),#000 70%);
-  z-index:-1;
-}
-
-/* الحاوية */
-.wrap{
-  max-width:420px;
-  margin:70px auto;
-  padding:28px;
-  border-radius:22px;
-  background:rgba(255,255,255,.06);
-  backdrop-filter:blur(14px);
-  box-shadow:0 30px 70px rgba(0,0,0,.7);
-  animation:enter 1.2s ease;
-}
-
-/* العنوان */
-.name{
-  text-align:center;
-  font-size:28px;
-  font-weight:700;
-  margin:8px 0 4px;
-  animation:glow 3s infinite alternate;
-}
-.role{
-  text-align:center;
-  opacity:.85;
-  margin-bottom:22px;
-}
-
-/* نبذة */
-.bio{
-  text-align:center;
-  line-height:1.8;
-  opacity:.9;
-  margin-bottom:22px;
-}
-
-/* الأزرار العامة */
-.btn{
-  width:100%;
-  padding:14px;
-  margin:10px 0;
-  border:none;
-  border-radius:14px;
-  color:#fff;
-  font-size:16px;
-  cursor:pointer;
-  background:linear-gradient(135deg,#00c6ff,#0072ff);
-  transition:.4s;
-}
-.btn:hover{transform:scale(1.05); box-shadow:0 0 28px rgba(0,198,255,.6)}
-
-/* أيقونات التواصل */
-.social{
-  display:flex; justify-content:space-between; gap:14px;
-  margin-top:18px;
-}
-.icon{
-  flex:1;
-  padding:14px 0;
-  border-radius:16px;
-  background:rgba(255,255,255,.08);
-  text-align:center;
-  transition:.4s;
-  box-shadow:0 15px 35px rgba(0,0,0,.5);
-}
-.icon:hover{
-  transform:translateY(-6px) scale(1.06);
-  box-shadow:0 0 35px rgba(0,198,255,.7);
-}
-.icon svg{width:28px; height:28px; fill:#00c6ff}
-
-/* المحتوى الديناميكي */
-#content{margin-top:22px; animation:fade .6s ease}
-video,img{width:100%; border-radius:16px; box-shadow:0 20px 45px rgba(0,0,0,.7)}
-
-/* حركات */
-@keyframes enter{from{opacity:0; transform:translateY(40px)} to{opacity:1; transform:none}}
-@keyframes fade{from{opacity:0} to{opacity:1}}
-@keyframes glow{from{text-shadow:0 0 10px #00c6ff} to{text-shadow:0 0 26px #0072ff}}
-</style>
+    <meta charset="UTF-8">
+    <title>رهام حسن حواص | رحلة تحول التدريب الرقمي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="نظام إدارة تدريب متكامل - عرض حصري للمؤتمر العلمي">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --deep-blue: #0A1931;
+            --navy: #185ADB;
+            --electric-blue: #1FABE8;
+            --light-blue: #78C4E3;
+            --white: #F5F5F5;
+            --gray: #E8E8E8;
+            --shadow-heavy: 0 25px 50px rgba(10, 25, 49, 0.25);
+            --shadow-medium: 0 15px 35px rgba(10, 25, 49, 0.15);
+            --shadow-light: 0 8px 25px rgba(10, 25, 49, 0.1);
+            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            --border-radius: 20px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #0c2246 100%);
+            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+        
+        /* خلفية سينمائية متطورة */
+        .cinematic-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+        
+        .gradient-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(31, 171, 232, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(24, 90, 219, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(10, 25, 49, 0.97) 0%, rgba(12, 34, 70, 0.98) 100%);
+        }
+        
+        .light-beam {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(31, 171, 232, 0.03) 20%, 
+                rgba(24, 90, 219, 0.05) 50%, 
+                rgba(31, 171, 232, 0.03) 80%, 
+                transparent 100%);
+            transform: rotate(15deg);
+            animation: beam-sweep 20s infinite linear;
+            top: -50%;
+            left: -50%;
+        }
+        
+        @keyframes beam-sweep {
+            0% { transform: rotate(15deg) translateX(-100%); }
+            100% { transform: rotate(15deg) translateX(100%); }
+        }
+        
+        .particle-field {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(31, 171, 232, 0.15);
+            border-radius: 50%;
+            animation: particle-float 20s infinite linear;
+        }
+        
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0.5);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px 25px;
+            position: relative;
+        }
+        
+        /* البطاقة السينمائية */
+        .cinematic-card {
+            background: rgba(15, 35, 65, 0.85);
+            backdrop-filter: blur(15px);
+            border-radius: var(--border-radius);
+            padding: 45px 40px;
+            margin-top: 70px;
+            box-shadow: var(--shadow-heavy);
+            border: 1px solid rgba(31, 171, 232, 0.15);
+            position: relative;
+            overflow: hidden;
+            animation: card-reveal 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .cinematic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                transparent 0%, 
+                rgba(31, 171, 232, 0.03) 40%, 
+                transparent 100%);
+            pointer-events: none;
+        }
+        
+        .cinematic-card::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            bottom: -2px;
+            left: -2px;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(31, 171, 232, 0.4), 
+                rgba(24, 90, 219, 0.4), 
+                transparent);
+            border-radius: calc(var(--border-radius) + 2px);
+            z-index: -1;
+            animation: border-glow 3s infinite alternate;
+        }
+        
+        @keyframes border-glow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+        
+        @keyframes card-reveal {
+            0% {
+                opacity: 0;
+                transform: translateY(60px) rotateX(-10deg);
+                filter: blur(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+                filter: blur(0);
+            }
+        }
+        
+        /* رأس السينمائي */
+        .cinematic-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .name-display {
+            margin-bottom: 35px;
+        }
+        
+        .main-name {
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--light-blue), var(--electric-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .main-name::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--electric-blue), transparent);
+        }
+        
+        .title-line {
+            font-size: 20px;
+            color: rgba(245, 245, 245, 0.9);
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+        
+        .conference-tag {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, 
+                rgba(31, 171, 232, 0.15), 
+                rgba(24, 90, 219, 0.1));
+            color: var(--light-blue);
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 16px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(31, 171, 232, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+        
+        .conference-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(31, 171, 232, 0.2);
+            border-color: rgba(31, 171, 232, 0.4);
+        }
+        
+        .conference-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.1), 
+                transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .conference-tag:hover::before {
+            transform: translateX(100%);
+        }
+        
+        /* قسم المشروع */
+        .project-section {
+            margin-bottom: 45px;
+        }
+        
+        .section-heading {
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-heading::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--electric-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--electric-blue);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        .project-description {
+            background: rgba(31, 171, 232, 0.05);
+            border-radius: 18px;
+            padding: 30px;
+            border: 1px solid rgba(31, 171, 232, 0.1);
+            line-height: 1.8;
+            font-size: 17px;
+            color: rgba(245, 245, 245, 0.9);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-description::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                transparent 0%, 
+                rgba(31, 171, 232, 0.02) 50%, 
+                transparent 100%);
+        }
+        
+        /* شبكة الأزرار السينمائية */
+        .action-panel {
+            margin-bottom: 45px;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .cinematic-button {
+            background: linear-gradient(135deg, 
+                rgba(31, 171, 232, 0.1), 
+                rgba(24, 90, 219, 0.05));
+            border: 1px solid rgba(31, 171, 232, 0.15);
+            border-radius: 16px;
+            padding: 25px 20px;
+            color: var(--white);
+            font-size: 17px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .cinematic-button:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: rgba(31, 171, 232, 0.4);
+            box-shadow: var(--shadow-medium);
+            background: linear-gradient(135deg, 
+                rgba(31, 171, 232, 0.15), 
+                rgba(24, 90, 219, 0.08));
+        }
+        
+        .cinematic-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.05), 
+                transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .cinematic-button:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .button-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, 
+                rgba(31, 171, 232, 0.2), 
+                rgba(24, 90, 219, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: var(--electric-blue);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        
+        .cinematic-button:hover .button-icon {
+            background: linear-gradient(135deg, 
+                rgba(31, 171, 232, 0.3), 
+                rgba(24, 90, 219, 0.15));
+            transform: rotate(10deg) scale(1.1);
+        }
+        
+        .button-icon::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            bottom: -2px;
+            left: -2px;
+            background: linear-gradient(45deg, 
+                var(--electric-blue), 
+                var(--navy), 
+                var(--electric-blue));
+            border-radius: 16px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .cinematic-button:hover .button-icon::before {
+            opacity: 0.5;
+        }
+        
+        .button-text {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .button-subtext {
+            font-size: 14px;
+            color: rgba(245, 245, 245, 0.7);
+            margin-top: 5px;
+        }
+        
+        /* شبكة الاتصال المتطورة */
+        .contact-panel {
+            margin-bottom: 45px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .contact-tile {
+            background: linear-gradient(135deg, 
+                rgba(31, 171, 232, 0.05), 
+                rgba(24, 90, 219, 0.03));
+            border: 1px solid rgba(31, 171, 232, 0.1);
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-tile:hover {
+            transform: translateY(-5px);
+            border-color: rgba(31, 171, 232, 0.3);
+            box-shadow: var(--shadow-light);
+            background: linear-gradient(135deg, 
+                rgba(31, 171, 232, 0.08), 
+                rgba(24, 90, 219, 0.05));
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, 
+                rgba(31, 171, 232, 0.15), 
+                rgba(24, 90, 219, 0.08));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+        
+        .contact-tile:hover .contact-icon {
+            transform: translateY(-3px) rotate(-5deg);
+            background: linear-gradient(135deg, 
+                rgba(31, 171, 232, 0.2), 
+                rgba(24, 90, 219, 0.12));
+        }
+        
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--electric-blue);
+            transition: var(--transition-smooth);
+        }
+        
+        .contact-tile:hover .contact-icon svg {
+            fill: var(--light-blue);
+        }
+        
+        .contact-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        .contact-description {
+            font-size: 13px;
+            color: rgba(245, 245, 245, 0.6);
+            text-align: center;
+        }
+        
+        /* عرض المحتوى السينمائي */
+        .content-display {
+            margin-top: 35px;
+            animation: content-slide 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        @keyframes content-slide {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .display-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(31, 171, 232, 0.2);
+        }
+        
+        .display-title {
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--white);
+            position: relative;
+        }
+        
+        .display-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--electric-blue);
+            border-radius: 2px;
+        }
+        
+        .close-display {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(31, 171, 232, 0.1);
+            border: 1px solid rgba(31, 171, 232, 0.2);
+            color: var(--electric-blue);
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-display:hover {
+            background: rgba(31, 171, 232, 0.2);
+            transform: rotate(90deg);
+            border-color: rgba(31, 171, 232, 0.4);
+        }
+        
+        .media-container {
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+        }
+        
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        
+        .media-container:hover img {
+            transform: scale(1.02);
+        }
+        
+        .content-details {
+            background: rgba(31, 171, 232, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(31, 171, 232, 0.1);
+        }
+        
+        .detail-heading {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .detail-heading::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--electric-blue);
+            border-radius: 2px;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+        
+        .feature-item {
+            background: rgba(31, 171, 232, 0.08);
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: rgba(245, 245, 245, 0.9);
+            border: 1px solid rgba(31, 171, 232, 0.15);
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-item:hover {
+            background: rgba(31, 171, 232, 0.12);
+            transform: translateX(-5px);
+            border-color: rgba(31, 171, 232, 0.3);
+        }
+        
+        .feature-item::before {
+            content: '›';
+            color: var(--electric-blue);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        /* التذييل السينمائي */
+        .cinematic-footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(31, 171, 232, 0.1);
+            color: rgba(245, 245, 245, 0.6);
+            font-size: 14px;
+            position: relative;
+        }
+        
+        .cinematic-footer::before {
+            content: '•••';
+            color: var(--electric-blue);
+            letter-spacing: 10px;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+            opacity: 0.5;
+        }
+        
+        /* تصميم متجاوب */
+        @media (max-width: 550px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .cinematic-card {
+                padding: 35px 25px;
+                margin-top: 50px;
+            }
+            
+            .main-name {
+                font-size: 36px;
+            }
+            
+            .button-grid,
+            .contact-grid,
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .title-line {
+                font-size: 18px;
+                padding: 0;
+            }
+        }
+        
+        /* تأثيرات إضافية */
+        .scene-transition {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--deep-blue);
+            z-index: 1000;
+            animation: scene-fade 1.5s ease forwards;
+            pointer-events: none;
+        }
+        
+        @keyframes scene-fade {
+            0% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+    </style>
 </head>
-
 <body>
-<div class="bg"></div>
-<div class="overlay"></div>
+    <!-- انتقال سينمائي -->
+    <div class="scene-transition"></div>
+    
+    <!-- خلفية سينمائية -->
+    <div class="cinematic-bg">
+        <div class="gradient-overlay"></div>
+        <div class="light-beam"></div>
+        <div class="particle-field" id="particles"></div>
+    </div>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="container">
+        <div class="cinematic-card">
+            <!-- الرأس السينمائي -->
+            <div class="cinematic-header">
+                <div class="name-display">
+                    <h1 class="main-name">رهام حسن حواص</h1>
+                </div>
+                
+                <div class="title-line">
+                    معمارية أنظمة التدريب الذكية | رؤية رقمية لإعادة تشكيل التدريب المؤسسي
+                </div>
+                
+                <div class="conference-tag">
+                    المؤتمر العلمي الدولي للابتكار الرقمي
+                </div>
+            </div>
+            
+            <!-- المشروع -->
+            <div class="project-section">
+                <div class="section-heading">المشروع الحصري</div>
+                <div class="project-description">
+                    نظام إدارة تدريب شامل للمعهد الليبي للمالية العامة، يجمع بين الذكاء الاصطناعي وتجربة المستخدم المتطورة لخلق منظومة تدريبية ذكية وقابلة للتطور. تصميم معماري مرن يدعم التحول الرقمي الشامل.
+                </div>
+            </div>
+            
+            <!-- لوحة الإجراءات -->
+            <div class="action-panel">
+                <div class="section-heading">استكشاف النظام</div>
+                <div class="button-grid">
+                    <button class="cinematic-button" onclick="showDemo()">
+                        <div class="button-icon">⏵</div>
+                        <div>
+                            <div class="button-text">العرض الحي</div>
+                            <div class="button-subtext">تجربة النظام التفاعلية</div>
+                        </div>
+                    </button>
+                    
+                    <button class="cinematic-button" onclick="showArchitecture()">
+                        <div class="button-icon">◷</div>
+                        <div>
+                            <div class="button-text">الهندسة المعمارية</div>
+                            <div class="button-subtext">بنية النظام المتطورة</div>
+                        </div>
+                    </button>
+                    
+                    <button class="cinematic-button" onclick="showInterface()">
+                        <div class="button-icon">□</div>
+                        <div>
+                            <div class="button-text">واجهات النظام</div>
+                            <div class="button-subtext">التصميم والتجربة</div>
+                        </div>
+                    </button>
+                    
+                    <button class="cinematic-button" onclick="showImpact()">
+                        <div class="button-icon">⇈</div>
+                        <div>
+                            <div class="button-text">الأثر المؤسسي</div>
+                            <div class="button-subtext">تحليل العوائد</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- لوحة الاتصال -->
+            <div class="contact-panel">
+                <div class="section-heading">نقاط الاتصال</div>
+                <div class="contact-grid">
+                    <a href="mailto:rehamhawasss@gmail.com" class="contact-tile">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">البريد الإلكتروني</div>
+                            <div class="contact-description">للمراسلات الرسمية</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/reham-hassan-b79364399" target="_blank" class="contact-tile">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">LinkedIn</div>
+                            <div class="contact-description">الملف المهني</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://wa.me/218941432002" target="_blank" class="contact-tile">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.297.297-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.011-.57-.011-.198 0-.52.074-.792.371-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.76.983.998-3.675-.236-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.004 5.45-4.438 9.88-9.888 9.88m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.333.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.333 11.893-11.893 0-3.18-1.24-6.162-3.495-8.411"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">WhatsApp</div>
+                            <div class="contact-description">للتواصل المباشر</div>
+                        </div>
+                    </a>
+                    
+                    <button class="contact-tile" onclick="showCollaboration()">
+                        <div class="contact-icon">⊕</div>
+                        <div>
+                            <div class="contact-label">فرص التعاون</div>
+                            <div class="contact-description">شراكات مستقبلية</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- عرض المحتوى -->
+            <div id="content-display" class="content-display"></div>
+            
+            <!-- التذييل -->
+            <div class="cinematic-footer">
+                <div>رحلة تحول التدريب الرقمي | رهام حسن حواص</div>
+                <div style="margin-top: 8px; font-size: 13px;">جميع الحقوق محفوظة © 2023</div>
+            </div>
+        </div>
+    </div>
 
-<div class="wrap">
-  <div class="name">Reham hassan hawas</div>
-  <div class="role">مشروع بعنوان ادارة تدريب المعهد الليبي للمالية العامة </div>
-
-  <div class="bio">
-    مطوّرة ويب تهتم بتجارب المستخدم والواجهات الذكية.
-    هذا الكود يعطيك وصول سريع لمحتوى متجدد عبر QR واحد.
-  </div>
-
-  <button class="btn" onclick="showVideo()">🎬 فيديو تعريفي</button>
-  <button class="btn" onclick="showImage()">🖼 صورة / عمل</button>
-
-  <!-- أيقونات التواصل -->
-  <div class="social">
-    <!-- Gmail -->
-    <a class="icon" href="mailto:rehamhawasss@gmail.com" aria-label="Gmail">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-    </a>
-
-    <!-- LinkedIn -->
-    <a class="icon" href="https://www.linkedin.com/in/reham-hassan-b79364399?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24"><path d="M4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm1 18H3V9h2v12zM9 9h2v2h.03c.28-.53.96-1.09 1.97-1.09 2.1 0 2.49 1.38 2.49 3.18V21h-2v-6.36c0-1.52-.03-3.48-2.12-3.48-2.12 0-2.44 1.66-2.44 3.37V21H9V9z"/></svg>
-    </a>
-
-    <!-- WhatsApp -->
-    <a class="icon" href="https://wa.me/218941432002" target="_blank" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.45 15.35L2 22l4.79-1.54A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.07-1.11l-.29-.17-2.85.92.93-2.77-.19-.29A8 8 0 1 1 12 20zm4.6-6.18c-.25-.12-1.47-.73-1.7-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8.99-.15.17-.3.19-.55.06-.25-.12-1.05-.39-2-1.25-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.38-.43.12-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.12-.57-1.37-.78-1.88-.21-.5-.42-.43-.57-.44h-.49c-.17 0-.45.06-.68.32-.23.25-.9.88-.9 2.15s.92 2.49 1.05 2.66c.12.17 1.8 2.75 4.36 3.86.61.26 1.08.41 1.45.52.61.19 1.16.16 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
-    </a>
-  </div>
-
-  <div id="content"></div>
-</div>
-
-<script>
-function showVideo(){
-  document.getElementById('content').innerHTML=`
-    <video controls autoplay>
-      <source src="2.mp4" type="video/mp4">
-    </video>`;
-}
-function showImage(){
-  document.getElementById('content').innerHTML=`
-    <img src="3.jpg" alt="Showcase">`;
-}
-</script>
+    <script>
+        // إنشاء الجسيمات السينمائية
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const count = 30;
+            
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 6 + 2;
+                const posX = Math.random() * 100;
+                const delay = Math.random() * 20;
+                const duration = 15 + Math.random() * 15;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // تأثيرات تفاعلية للعناصر
+        function addHoverEffects() {
+            const buttons = document.querySelectorAll('.cinematic-button, .contact-tile');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mousemove', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    this.style.setProperty('--mouse-x', `${x}px`);
+                    this.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        }
+        
+        // عرض العرض الحي
+        function showDemo() {
+            const display = document.getElementById('content-display');
+            display.innerHTML = `
+                <div class="display-header">
+                    <div class="display-title">تجربة النظام الحية</div>
+                    <button class="close-display" onclick="closeDisplay()">×</button>
+                </div>
+                
+                <div class="media-container">
+                    <video controls autoplay muted poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                        <source src="demo.mp4" type="video/mp4">
+                        <source src="demo.webm" type="video/webm">
+                        متصفحك لا يدعم تشغيل الفيديو.
+                    </video>
+                </div>
+                
+                <div class="content-details">
+                    <div class="detail-heading">التجربة التفاعلية</div>
+                    <p>يعرض هذا الفيديو رحلة متكاملة داخل النظام، من تسجيل الدخول إلى إنشاء التقارير المتقدمة. كل تفاعل مصمم ليكون بديهياً وسريعاً.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">التنقل السريع</div>
+                        <div class="feature-item">البحث الذكي</div>
+                        <div class="feature-item">التقارير الفورية</div>
+                        <div class="feature-item">الإشعارات الذكية</div>
+                    </div>
+                </div>
+            `;
+            
+            display.scrollIntoView({ behavior: 'smooth' });
+            animateFeatures();
+        }
+        
+        // عرض الهندسة المعمارية
+        function showArchitecture() {
+            const display = document.getElementById('content-display');
+            display.innerHTML = `
+                <div class="display-header">
+                    <div class="display-title">الهندسة المعمارية للنظام</div>
+                    <button class="close-display" onclick="closeDisplay()">×</button>
+                </div>
+                
+                <div class="media-container">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="هندسة النظام">
+                </div>
+                
+                <div class="content-details">
+                    <div class="detail-heading">البنية التقنية</div>
+                    <p>يعتمد النظام على بنية متعددة الطبقات تسمح بالمرونة والتوسع. كل طبقة مستقلة وقابلة للترقية دون التأثير على النظام ككل.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">طبقة العرض</div>
+                        <div class="feature-item">طبقة الأعمال</div>
+                        <div class="feature-item">طبقة البيانات</div>
+                        <div class="feature-item">واجهات API</div>
+                        <div class="feature-item">التخزين السحابي</div>
+                        <div class="feature-item">نظام الأمان</div>
+                    </div>
+                </div>
+            `;
+            
+            display.scrollIntoView({ behavior: 'smooth' });
+            animateFeatures();
+        }
+        
+        // عرض واجهات النظام
+        function showInterface() {
+            const display = document.getElementById('content-display');
+            display.innerHTML = `
+                <div class="display-header">
+                    <div class="display-title">تصميم واجهات النظام</div>
+                    <button class="close-display" onclick="closeDisplay()">×</button>
+                </div>
+                
+                <div class="media-container">
+                    <img src="1.jpg" alt="واجهات النظام" onerror="this.src='https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'">
+                </div>
+                
+                <div class="content-details">
+                    <div class="detail-heading">فلسفة التصميم</div>
+                    <p>واجهات النظام صُممت وفق مبادئ التصميم المرتكز على الإنسان، مع التركيز على البساطة والكفاءة والتجربة الممتعة.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">التصميم المستجيب</div>
+                        <div class="feature-item">إمكانية الوصول</div>
+                        <div class="feature-item">التوجيه البصري</div>
+                        <div class="feature-item">التغذية الراجعة</div>
+                        <div class="feature-item">التدرج اللوني</div>
+                        <div class="feature-item">الطباعة المتقنة</div>
+                    </div>
+                </div>
+            `;
+            
+            display.scrollIntoView({ behavior: 'smooth' });
+            animateFeatures();
+        }
+        
+        // عرض الأثر المؤسسي
+        function showImpact() {
+            const display = document.getElementById('content-display');
+            display.innerHTML = `
+                <div class="display-header">
+                    <div class="display-title">التحول المؤسسي</div>
+                    <button class="close-display" onclick="closeDisplay()">×</button>
+                </div>
+                
+                <div class="media-container">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="التحول المؤسسي">
+                </div>
+                
+                <div class="content-details">
+                    <div class="detail-heading">مؤشرات الأداء</div>
+                    <p>يتوقع أن يحقق النظام تحسينات كبيرة في عدة جوانب من عمل المؤسسة، من الكفاءة التشغيلية إلى رضا المستخدمين.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">زيادة الإنتاجية 40%</div>
+                        <div class="feature-item">تخفيض الوقت 60%</div>
+                        <div class="feature-item">تحسين الدقة 85%</div>
+                        <div class="feature-item">رضا المستخدمين 90%</div>
+                        <div class="feature-item">توفير التكاليف 35%</div>
+                        <div class="feature-item">سرعة القرار 50%</div>
+                    </div>
+                </div>
+            `;
+            
+            display.scrollIntoView({ behavior: 'smooth' });
+            animateFeatures();
+        }
+        
+        // عرض فرص التعاون
+        function showCollaboration() {
+            const display = document.getElementById('content-display');
+            display.innerHTML = `
+                <div class="display-header">
+                    <div class="display-title">شراكات المستقبل</div>
+                    <button class="close-display" onclick="closeDisplay()">×</button>
+                </div>
+                
+                <div class="content-details">
+                    <div class="detail-heading">مجالات التعاون</div>
+                    <p>أبحث عن شركاء يشاركونني الرؤية في إعادة تشكيل مستقبل التدريب المؤسسي. فرص التعاون تشمل:</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">التطوير المشترك</div>
+                        <div class="feature-item">البحث العلمي</div>
+                        <div class="feature-item">الاستشارات المتخصصة</div>
+                        <div class="feature-item">التدريب والتأهيل</div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 25px; background: rgba(31, 171, 232, 0.08); border-radius: 12px; border: 1px solid rgba(31, 171, 232, 0.2);">
+                        <div class="detail-heading">تواصل معي</div>
+                        <div style="margin-top: 15px; display: grid; gap: 12px;">
+                            <div>البريد: rehamhawasss@gmail.com</div>
+                            <div>الهاتف: 218941432002+</div>
+                            <div>الموقع: المؤتمر العلمي الدولي</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            display.scrollIntoView({ behavior: 'smooth' });
+            animateFeatures();
+        }
+        
+        // إغلاق العرض
+        function closeDisplay() {
+            document.getElementById('content-display').innerHTML = '';
+        }
+        
+        // تأثيرات تفاعلية
+        function animateFeatures() {
+            const features = document.querySelectorAll('.feature-item');
+            features.forEach((feature, index) => {
+                setTimeout(() => {
+                    feature.style.transform = 'translateX(0)';
+                    feature.style.opacity = '1';
+                }, index * 100);
+            });
+        }
+        
+        // تهيئة الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            addHoverEffects();
+            
+            // تأثير تتبع الماوس
+            document.addEventListener('mousemove', function(e) {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                document.documentElement.style.setProperty('--mouse-x', x);
+                document.documentElement.style.setProperty('--mouse-y', y);
+            });
+            
+            // رسالة ترحيبية
+            setTimeout(() => {
+                const desc = document.querySelector('.project-description');
+                if (desc) {
+                    desc.innerHTML += '<p style="margin-top: 20px; font-style: italic; border-right: 2px solid rgba(31, 171, 232, 0.5); padding-right: 15px;">"نحو مستقبل تدريبي أكثر ذكاءً ومرونة"</p>';
+                }
+            }, 1500);
+            
+            // إخفاء الانتقال
+            setTimeout(() => {
+                const transition = document.querySelector('.scene-transition');
+                if (transition) {
+                    transition.style.display = 'none';
+                }
+            }, 1500);
+        });
+    </script>
 </body>
-</html>
+  </html>
+
 
 
 
