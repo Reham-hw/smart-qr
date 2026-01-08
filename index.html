@@ -2,25 +2,33 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>رهام حسن حواص | رحلة تحول التدريب الرقمي</title>
+    <title>رهام حسن حواص | محفظة مهنية - معمارية أنظمة تدريب ومطورة ويب</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="نظام إدارة تدريب متكامل - عرض حصري للمؤتمر العلمي">
+    <meta name="description" content="محفظة مشاريع أكاديمية ومهنية متخصصة في أنظمة التدريب الرقمي وتطوير الويب">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap');
         
         :root {
-            --deep-blue: #0A1931;
-            --navy: #185ADB;
-            --electric-blue: #1FABE8;
-            --light-blue: #78C4E3;
-            --white: #F5F5F5;
-            --gray: #E8E8E8;
-            --shadow-heavy: 0 25px 50px rgba(10, 25, 49, 0.25);
-            --shadow-medium: 0 15px 35px rgba(10, 25, 49, 0.15);
-            --shadow-light: 0 8px 25px rgba(10, 25, 49, 0.1);
-            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            --border-radius: 20px;
+            --primary-blue: #0A2647;
+            --secondary-blue: #144272;
+            --accent-blue: #205295;
+            --light-blue: #2C74B3;
+            --baby-blue: #E0F4FF;
+            --baby-cyan: #87C4FF;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+            --light-gray: #E2E8F0;
+            --text-dark: #1E293B;
+            --text-light: #64748B;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --shadow-light: 0 4px 12px rgba(10, 38, 71, 0.08);
+            --shadow-medium: 0 8px 24px rgba(10, 38, 71, 0.12);
+            --shadow-heavy: 0 12px 32px rgba(10, 38, 71, 0.18);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
         }
         
         * {
@@ -30,1094 +38,1482 @@
         }
         
         body {
-            font-family: 'IBM Plex Sans Arabic', sans-serif;
-            color: var(--white);
-            background: linear-gradient(135deg, var(--deep-blue) 0%, #0c2246 100%);
-            min-height: 100vh;
+            font-family: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--baby-blue) 100%);
             line-height: 1.7;
             overflow-x: hidden;
-            font-weight: 300;
+            font-weight: 400;
+            min-height: 100vh;
         }
         
-        /* خلفية سينمائية متطورة */
-        .cinematic-bg {
+        /* تصميم الخلفية المتقدمة */
+        .advanced-bg {
             position: fixed;
             width: 100%;
             height: 100%;
             z-index: -3;
+            overflow: hidden;
         }
         
-        .gradient-overlay {
+        .gradient-mesh {
             position: absolute;
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(31, 171, 232, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(24, 90, 219, 0.05) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(10, 25, 49, 0.97) 0%, rgba(12, 34, 70, 0.98) 100%);
-        }
-        
-        .light-beam {
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(31, 171, 232, 0.03) 20%, 
-                rgba(24, 90, 219, 0.05) 50%, 
-                rgba(31, 171, 232, 0.03) 80%, 
-                transparent 100%);
-            transform: rotate(15deg);
-            animation: beam-sweep 20s infinite linear;
-            top: -50%;
-            left: -50%;
-        }
-        
-        @keyframes beam-sweep {
-            0% { transform: rotate(15deg) translateX(-100%); }
-            100% { transform: rotate(15deg) translateX(100%); }
-        }
-        
-        .particle-field {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .particle {
-            position: absolute;
-            background: rgba(31, 171, 232, 0.15);
-            border-radius: 50%;
-            animation: particle-float 20s infinite linear;
-        }
-        
-        @keyframes particle-float {
-            0% {
-                transform: translateY(100vh) translateX(0) scale(0.5);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.3;
-            }
-            90% {
-                opacity: 0.3;
-            }
-            100% {
-                transform: translateY(-100px) translateX(100px) scale(1);
-                opacity: 0;
-            }
+                radial-gradient(circle at 20% 30%, rgba(44, 116, 179, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(32, 82, 149, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 40% 80%, rgba(20, 66, 114, 0.04) 0%, transparent 40%);
         }
         
         /* الحاوية الرئيسية */
         .container {
-            max-width: 500px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 25px;
+            padding: 30px 20px;
             position: relative;
         }
         
-        /* البطاقة السينمائية */
-        .cinematic-card {
-            background: rgba(15, 35, 65, 0.85);
-            backdrop-filter: blur(15px);
-            border-radius: var(--border-radius);
-            padding: 45px 40px;
-            margin-top: 70px;
+        /* بطاقة التعريف المحسنة */
+        .enhanced-profile-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 50px;
+            margin-bottom: 50px;
             box-shadow: var(--shadow-heavy);
-            border: 1px solid rgba(31, 171, 232, 0.15);
             position: relative;
             overflow: hidden;
-            animation: card-reveal 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-            transform-style: preserve-3d;
-            perspective: 1000px;
+            border: 1px solid rgba(32, 82, 149, 0.1);
+            animation: slideUp 0.8s ease-out;
         }
         
-        .cinematic-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                transparent 0%, 
-                rgba(31, 171, 232, 0.03) 40%, 
-                transparent 100%);
-            pointer-events: none;
-        }
-        
-        .cinematic-card::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            right: -2px;
-            bottom: -2px;
-            left: -2px;
-            background: linear-gradient(45deg, 
-                transparent, 
-                rgba(31, 171, 232, 0.4), 
-                rgba(24, 90, 219, 0.4), 
-                transparent);
-            border-radius: calc(var(--border-radius) + 2px);
-            z-index: -1;
-            animation: border-glow 3s infinite alternate;
-        }
-        
-        @keyframes border-glow {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.7; }
-        }
-        
-        @keyframes card-reveal {
+        @keyframes slideUp {
             0% {
                 opacity: 0;
-                transform: translateY(60px) rotateX(-10deg);
-                filter: blur(10px);
+                transform: translateY(40px);
             }
             100% {
-                opacity: 1;
-                transform: translateY(0) rotateX(0);
-                filter: blur(0);
-            }
-        }
-        
-        /* رأس السينمائي */
-        .cinematic-header {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .name-display {
-            margin-bottom: 35px;
-        }
-        
-        .main-name {
-            font-size: 42px;
-            font-weight: 700;
-            background: linear-gradient(90deg, var(--light-blue), var(--electric-blue));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .main-name::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            right: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--electric-blue), transparent);
-        }
-        
-        .title-line {
-            font-size: 20px;
-            color: rgba(245, 245, 245, 0.9);
-            font-weight: 400;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            padding: 0 20px;
-        }
-        
-        .conference-tag {
-            display: inline-flex;
-            align-items: center;
-            background: linear-gradient(135deg, 
-                rgba(31, 171, 232, 0.15), 
-                rgba(24, 90, 219, 0.1));
-            color: var(--light-blue);
-            padding: 14px 28px;
-            border-radius: 30px;
-            font-weight: 500;
-            font-size: 16px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(31, 171, 232, 0.2);
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition-smooth);
-        }
-        
-        .conference-tag:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(31, 171, 232, 0.2);
-            border-color: rgba(31, 171, 232, 0.4);
-        }
-        
-        .conference-tag::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.1), 
-                transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-        
-        .conference-tag:hover::before {
-            transform: translateX(100%);
-        }
-        
-        /* قسم المشروع */
-        .project-section {
-            margin-bottom: 45px;
-        }
-        
-        .section-heading {
-            font-size: 26px;
-            font-weight: 600;
-            color: var(--white);
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .section-heading::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--electric-blue);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--electric-blue);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-        
-        .project-description {
-            background: rgba(31, 171, 232, 0.05);
-            border-radius: 18px;
-            padding: 30px;
-            border: 1px solid rgba(31, 171, 232, 0.1);
-            line-height: 1.8;
-            font-size: 17px;
-            color: rgba(245, 245, 245, 0.9);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-description::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                transparent 0%, 
-                rgba(31, 171, 232, 0.02) 50%, 
-                transparent 100%);
-        }
-        
-        /* شبكة الأزرار السينمائية */
-        .action-panel {
-            margin-bottom: 45px;
-        }
-        
-        .button-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        
-        .cinematic-button {
-            background: linear-gradient(135deg, 
-                rgba(31, 171, 232, 0.1), 
-                rgba(24, 90, 219, 0.05));
-            border: 1px solid rgba(31, 171, 232, 0.15);
-            border-radius: 16px;
-            padding: 25px 20px;
-            color: var(--white);
-            font-size: 17px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .cinematic-button:hover {
-            transform: translateY(-5px) scale(1.02);
-            border-color: rgba(31, 171, 232, 0.4);
-            box-shadow: var(--shadow-medium);
-            background: linear-gradient(135deg, 
-                rgba(31, 171, 232, 0.15), 
-                rgba(24, 90, 219, 0.08));
-        }
-        
-        .cinematic-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.05), 
-                transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-        
-        .cinematic-button:hover::before {
-            transform: translateX(100%);
-        }
-        
-        .button-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, 
-                rgba(31, 171, 232, 0.2), 
-                rgba(24, 90, 219, 0.1));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            color: var(--electric-blue);
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-        
-        .cinematic-button:hover .button-icon {
-            background: linear-gradient(135deg, 
-                rgba(31, 171, 232, 0.3), 
-                rgba(24, 90, 219, 0.15));
-            transform: rotate(10deg) scale(1.1);
-        }
-        
-        .button-icon::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            right: -2px;
-            bottom: -2px;
-            left: -2px;
-            background: linear-gradient(45deg, 
-                var(--electric-blue), 
-                var(--navy), 
-                var(--electric-blue));
-            border-radius: 16px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .cinematic-button:hover .button-icon::before {
-            opacity: 0.5;
-        }
-        
-        .button-text {
-            font-size: 18px;
-            font-weight: 600;
-        }
-        
-        .button-subtext {
-            font-size: 14px;
-            color: rgba(245, 245, 245, 0.7);
-            margin-top: 5px;
-        }
-        
-        /* شبكة الاتصال المتطورة */
-        .contact-panel {
-            margin-bottom: 45px;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        
-        .contact-tile {
-            background: linear-gradient(135deg, 
-                rgba(31, 171, 232, 0.05), 
-                rgba(24, 90, 219, 0.03));
-            border: 1px solid rgba(31, 171, 232, 0.1);
-            border-radius: 16px;
-            padding: 25px 20px;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-tile:hover {
-            transform: translateY(-5px);
-            border-color: rgba(31, 171, 232, 0.3);
-            box-shadow: var(--shadow-light);
-            background: linear-gradient(135deg, 
-                rgba(31, 171, 232, 0.08), 
-                rgba(24, 90, 219, 0.05));
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, 
-                rgba(31, 171, 232, 0.15), 
-                rgba(24, 90, 219, 0.08));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition-smooth);
-        }
-        
-        .contact-tile:hover .contact-icon {
-            transform: translateY(-3px) rotate(-5deg);
-            background: linear-gradient(135deg, 
-                rgba(31, 171, 232, 0.2), 
-                rgba(24, 90, 219, 0.12));
-        }
-        
-        .contact-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--electric-blue);
-            transition: var(--transition-smooth);
-        }
-        
-        .contact-tile:hover .contact-icon svg {
-            fill: var(--light-blue);
-        }
-        
-        .contact-label {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--white);
-        }
-        
-        .contact-description {
-            font-size: 13px;
-            color: rgba(245, 245, 245, 0.6);
-            text-align: center;
-        }
-        
-        /* عرض المحتوى السينمائي */
-        .content-display {
-            margin-top: 35px;
-            animation: content-slide 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        @keyframes content-slide {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
         
-        .display-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(31, 171, 232, 0.2);
-        }
-        
-        .display-title {
-            font-size: 26px;
-            font-weight: 600;
-            color: var(--white);
-            position: relative;
-        }
-        
-        .display-title::after {
+        .enhanced-profile-card::before {
             content: '';
             position: absolute;
-            bottom: -8px;
+            top: 0;
             right: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--electric-blue);
-            border-radius: 2px;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--baby-cyan), var(--light-blue), var(--accent-blue));
         }
         
-        .close-display {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: rgba(31, 171, 232, 0.1);
-            border: 1px solid rgba(31, 171, 232, 0.2);
-            color: var(--electric-blue);
-            font-size: 20px;
-            cursor: pointer;
-            transition: var(--transition-smooth);
+        .profile-header-enhanced {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .profile-avatar-enhanced {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--white);
+            font-size: 52px;
+            font-weight: 700;
+            box-shadow: var(--shadow-heavy);
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
         }
         
-        .close-display:hover {
-            background: rgba(31, 171, 232, 0.2);
+        .profile-avatar-enhanced::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            bottom: -10px;
+            left: -10px;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(45deg);
+        }
+        
+        .profile-info-enhanced {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .profile-name-enhanced {
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--light-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .profile-title-enhanced {
+            font-size: 24px;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            padding-right: 20px;
+        }
+        
+        .profile-title-enhanced::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(44, 116, 179, 0.2);
+        }
+        
+        .profile-bio-enhanced {
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 35px;
+            line-height: 1.9;
+            max-width: 800px;
+            padding: 20px;
+            background: var(--off-white);
+            border-radius: var(--border-radius);
+            border-right: 4px solid var(--baby-cyan);
+        }
+        
+        /* تحسينات لشبكة المعلومات */
+        .enhanced-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .enhanced-detail-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(224, 244, 255, 0.7));
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            border: 1px solid rgba(32, 82, 149, 0.15);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .enhanced-detail-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: rgba(32, 82, 149, 0.3);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(224, 244, 255, 0.9));
+        }
+        
+        .enhanced-detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--baby-cyan), var(--light-blue));
+        }
+        
+        .detail-title-enhanced {
+            font-size: 20px;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(32, 82, 149, 0.1);
+        }
+        
+        .detail-title-enhanced i {
+            color: var(--light-blue);
+            font-size: 24px;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(44, 116, 179, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .detail-content-enhanced {
+            font-size: 16px;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+        
+        .education-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .education-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(224, 244, 255, 0.5);
+            border-radius: var(--border-radius);
+            border-right: 3px solid var(--baby-cyan);
+        }
+        
+        .education-icon {
+            color: var(--light-blue);
+            font-size: 20px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .education-details p {
+            margin-bottom: 5px;
+        }
+        
+        .education-details strong {
+            color: var(--primary-blue);
+        }
+        
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(32, 82, 149, 0.08);
+            color: var(--accent-blue);
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid rgba(32, 82, 149, 0.15);
+        }
+        
+        .contact-link:hover {
+            background: rgba(32, 82, 149, 0.15);
+            transform: translateX(-5px);
+            box-shadow: var(--shadow-light);
+            border-color: rgba(32, 82, 149, 0.3);
+        }
+        
+        .contact-link i {
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(44, 116, 179, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .skill-tags-enhanced {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .skill-tag-enhanced {
+            background: linear-gradient(135deg, rgba(44, 116, 179, 0.1), rgba(32, 82, 149, 0.05));
+            color: var(--primary-blue);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 1px solid rgba(44, 116, 179, 0.2);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .skill-tag-enhanced:hover {
+            background: linear-gradient(135deg, rgba(44, 116, 179, 0.2), rgba(32, 82, 149, 0.1));
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .skill-tag-enhanced i {
+            color: var(--light-blue);
+            font-size: 16px;
+        }
+        
+        /* قسم المشاريع المحسن */
+        .enhanced-projects-section {
+            margin-bottom: 60px;
+        }
+        
+        .enhanced-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .enhanced-section-title {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .enhanced-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 6px;
+            background: linear-gradient(90deg, var(--baby-cyan), var(--light-blue));
+            border-radius: 3px;
+        }
+        
+        .enhanced-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 35px;
+        }
+        
+        @media (max-width: 768px) {
+            .enhanced-projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .enhanced-project-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+            transition: var(--transition);
+            border: 1px solid rgba(32, 82, 149, 0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .enhanced-project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .project-header-enhanced {
+            padding: 35px 35px 25px;
+            background: linear-gradient(135deg, rgba(224, 244, 255, 0.5), rgba(135, 196, 255, 0.3));
+            border-bottom: 1px solid rgba(32, 82, 149, 0.15);
+            position: relative;
+        }
+        
+        .project-icon-enhanced {
+            width: 70px;
+            height: 70px;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(44, 116, 179, 0.3);
+        }
+        
+        .project-title-enhanced {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+        }
+        
+        .project-subtitle-enhanced {
+            font-size: 18px;
+            color: var(--light-blue);
+            font-weight: 600;
+        }
+        
+        .project-content-enhanced {
+            padding: 30px 35px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-description-enhanced {
+            font-size: 17px;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            line-height: 1.9;
+            flex-grow: 1;
+        }
+        
+        .project-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: var(--off-white);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(32, 82, 149, 0.1);
+        }
+        
+        .highlight-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(44, 116, 179, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-blue);
+            font-size: 18px;
+        }
+        
+        .highlight-text {
+            font-size: 15px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        .project-footer-enhanced {
+            padding: 25px 35px;
+            background: linear-gradient(135deg, rgba(224, 244, 255, 0.3), rgba(135, 196, 255, 0.2));
+            border-top: 1px solid rgba(32, 82, 149, 0.15);
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .enhanced-project-button {
+            background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
+            color: var(--white);
+            border: none;
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 25px rgba(44, 116, 179, 0.3);
+        }
+        
+        .enhanced-project-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(44, 116, 179, 0.4);
+            background: linear-gradient(135deg, var(--accent-blue), var(--secondary-blue));
+        }
+        
+        /* نظام العرض التفاعلي المحسن */
+        .interactive-display-system {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 38, 71, 0.97);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            padding: 20px;
+            overflow-y: auto;
+            display: none;
+            animation: modalSlideIn 0.4s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .interactive-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(32, 82, 149, 0.3);
+        }
+        
+        .interactive-header {
+            padding: 30px 40px 20px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .interactive-title {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        
+        .interactive-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .close-interactive {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .close-interactive:hover {
+            background: rgba(255, 255, 255, 0.25);
             transform: rotate(90deg);
-            border-color: rgba(31, 171, 232, 0.4);
+        }
+        
+        .interactive-nav {
+            display: flex;
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-tab {
+            padding: 18px 30px;
+            color: var(--baby-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 17px;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+            background: rgba(32, 82, 149, 0.3);
+        }
+        
+        .nav-tab:hover {
+            background: rgba(44, 116, 179, 0.4);
+            color: var(--white);
+        }
+        
+        .nav-tab.active {
+            background: rgba(44, 116, 179, 0.6);
+            border-bottom: 3px solid var(--baby-blue);
+            color: var(--white);
+        }
+        
+        .interactive-content {
+            padding: 35px 40px;
+            min-height: 500px;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .content-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--baby-blue);
         }
         
         .media-container {
-            border-radius: 16px;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             box-shadow: var(--shadow-medium);
-            position: relative;
         }
         
         .media-container img,
         .media-container video {
             width: 100%;
             display: block;
-            transition: transform 0.6s ease;
         }
         
-        .media-container:hover img {
-            transform: scale(1.02);
-        }
-        
-        .content-details {
-            background: rgba(31, 171, 232, 0.05);
-            border-radius: 16px;
-            padding: 30px;
-            border: 1px solid rgba(31, 171, 232, 0.1);
-        }
-        
-        .detail-heading {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--white);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .detail-heading::before {
-            content: '';
-            width: 4px;
-            height: 20px;
-            background: var(--electric-blue);
-            border-radius: 2px;
-        }
-        
-        .feature-list {
+        .feature-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
         }
         
         .feature-item {
-            background: rgba(31, 171, 232, 0.08);
-            padding: 14px;
-            border-radius: 10px;
-            font-size: 14px;
-            color: rgba(245, 245, 245, 0.9);
-            border: 1px solid rgba(31, 171, 232, 0.15);
-            transition: var(--transition-smooth);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            background: var(--off-white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(32, 82, 149, 0.1);
+            transition: var(--transition);
         }
         
         .feature-item:hover {
-            background: rgba(31, 171, 232, 0.12);
-            transform: translateX(-5px);
-            border-color: rgba(31, 171, 232, 0.3);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-light);
+            border-color: rgba(32, 82, 149, 0.2);
         }
         
-        .feature-item::before {
-            content: '›';
-            color: var(--electric-blue);
-            font-weight: bold;
-            font-size: 18px;
-        }
-        
-        /* التذييل السينمائي */
-        .cinematic-footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(31, 171, 232, 0.1);
-            color: rgba(245, 245, 245, 0.6);
-            font-size: 14px;
-            position: relative;
-        }
-        
-        .cinematic-footer::before {
-            content: '•••';
-            color: var(--electric-blue);
-            letter-spacing: 10px;
-            display: block;
+        .feature-icon {
+            font-size: 30px;
+            color: var(--light-blue);
             margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        
+        .feature-desc {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(224, 244, 255, 0.5), rgba(135, 196, 255, 0.2));
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(32, 82, 149, 0.15);
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--light-blue);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
             font-size: 16px;
-            opacity: 0.5;
+            color: var(--text-dark);
+            font-weight: 600;
         }
         
         /* تصميم متجاوب */
-        @media (max-width: 550px) {
+        @media (max-width: 768px) {
             .container {
                 padding: 20px 15px;
             }
             
-            .cinematic-card {
-                padding: 35px 25px;
-                margin-top: 50px;
+            .enhanced-profile-card {
+                padding: 30px 25px;
             }
             
-            .main-name {
+            .profile-header-enhanced {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .profile-title-enhanced::before {
+                right: 50%;
+                transform: translateX(50%) translateY(-50%);
+            }
+            
+            .profile-name-enhanced {
                 font-size: 36px;
             }
             
-            .button-grid,
-            .contact-grid,
-            .feature-list {
+            .enhanced-section-title {
+                font-size: 32px;
+            }
+            
+            .project-highlights {
                 grid-template-columns: 1fr;
             }
             
-            .title-line {
-                font-size: 18px;
-                padding: 0;
+            .interactive-content {
+                padding: 25px;
+            }
+            
+            .interactive-header {
+                padding: 25px;
+            }
+            
+            .interactive-title {
+                font-size: 28px;
+            }
+            
+            .nav-tab {
+                padding: 15px;
+                font-size: 15px;
+            }
+            
+            .enhanced-details-grid {
+                grid-template-columns: 1fr;
             }
         }
         
-        /* تأثيرات إضافية */
-        .scene-transition {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--deep-blue);
-            z-index: 1000;
-            animation: scene-fade 1.5s ease forwards;
-            pointer-events: none;
-        }
-        
-        @keyframes scene-fade {
-            0% { opacity: 1; }
-            100% { opacity: 0; display: none; }
+        @media (max-width: 480px) {
+            .interactive-nav {
+                flex-direction: column;
+            }
+            
+            .nav-tab {
+                width: 100%;
+                text-align: center;
+            }
+            @media (max-width: 768px) {
+  .interactive-nav {
+    flex-wrap: wrap;
+  }
+
+  .nav-tab {
+    flex: 1 1 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+}
+
         }
     </style>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- انتقال سينمائي -->
-    <div class="scene-transition"></div>
-    
-    <!-- خلفية سينمائية -->
-    <div class="cinematic-bg">
-        <div class="gradient-overlay"></div>
-        <div class="light-beam"></div>
-        <div class="particle-field" id="particles"></div>
+    <!-- خلفية متقدمة -->
+    <div class="advanced-bg">
+        <div class="gradient-mesh"></div>
     </div>
     
     <!-- المحتوى الرئيسي -->
     <div class="container">
-        <div class="cinematic-card">
-            <!-- الرأس السينمائي -->
-            <div class="cinematic-header">
-                <div class="name-display">
-                    <h1 class="main-name">رهام حسن حواص</h1>
+        <!-- بطاقة التعريف المحسنة -->
+        <div class="enhanced-profile-card">
+            <div class="profile-header-enhanced">
+                <div class="profile-avatar-enhanced">RH</div>
+                <div class="profile-info-enhanced">
+                    <h1 class="profile-name-enhanced">   م .
+                         رهام حسن حواص 
+
+                    </h1>
+                  <div class="profile-title-enhanced">
+مُطوّرة برمجيات | Full-Stack Web & Mobile
+</div>
+
+<p class="profile-bio-enhanced">
+مطوّرة برمجيات شغوفة ببناء الأنظمة الرقمية الذكية، أعمل على تصميم وتطوير حلول ويب وتطبيقات
+موبايل تركز على الجودة، قابلية التوسع، وتجربة المستخدم.
+لدي خبرة في أنظمة التدريب الرقمية، تطوير الويب باستخدام ASP.NET Core،
+وتطبيقات Android و Flutter، مع معرفة عملية بإطار Laravel على مستوى Junior.
+</p>
+
+                </div>
+            </div>
+            
+            <div class="enhanced-details-grid">
+                <!-- بطاقة التعليم والمؤهلات -->
+                <div class="enhanced-detail-card">
+                    <div class="detail-title-enhanced">
+                        <i class="fas fa-graduation-cap"></i>
+                        التعليم والمؤهلات
+                    </div>
+                    <div class="detail-content-enhanced">
+                        <div class="education-list">
+                            <div class="education-item">
+                                <div class="education-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="education-details">
+                                    <p><strong>بكالوريوس علوم حاسوب </strong></p>
+                                    <p>تخرج يوليو 2025</p>
+                                </div>
+                                
+                            </div> 
+                             <div class="education-item">
+                                <div class="education-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="education-details">
+                                    <p><strong>شهادة من LS Tranining </strong></p>
+                                    <p> From Prompt to Product </p>
+                                </div>
+                            </div>
+                            <div class="education-item">
+                                <div class="education-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="education-details">
+                                    <p><strong>المؤتمر العلمي الدولي للابتكار الرقمي</strong></p>
+                                    <p>مشاركة وعرض مشروع نظام التدريب الرقمي</p>
+                                </div>
+                            </div>
+                              
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="title-line">
-                    معمارية أنظمة التدريب الذكية | رؤية رقمية لإعادة تشكيل التدريب المؤسسي
+                <!-- بطاقة التخصصات والمهارات -->
+                <div class="enhanced-detail-card">
+                    <div class="detail-title-enhanced">
+                        <i class="fas fa-cogs"></i>
+                        التخصصات والمهارات
+                    </div>
+                    <div class="detail-content-enhanced">
+                        <div class="skill-tags-enhanced">
+                            <span class="skill-tag-enhanced">
+  <i class="fab fa-android"></i>
+  Android Development
+</span>
+
+<span class="skill-tag-enhanced">
+  <i class="fas fa-mobile-alt"></i>
+  Flutter
+</span>
+
+<span class="skill-tag-enhanced">
+  <i class="fab fa-laravel"></i>
+  Laravel (Junior)
+</span>
+
+                            <span class="skill-tag-enhanced">
+                                <i class="fas fa-code"></i>
+                             Full-stack web developers 
+                            </span>
+                            <span class="skill-tag-enhanced">
+                                <i class="fas fa-microchip"></i>
+                                هندسة البرمجيات
+                            </span>
+                            <span class="skill-tag-enhanced">
+                                <i class="fas fa-database"></i>
+                                قواعد البيانات
+                            </span>
+                            <span class="skill-tag-enhanced">
+                                <i class="fas fa-paint-brush"></i>
+                                UI/UX تصميم
+                            </span>
+                            <span class="skill-tag-enhanced">
+                                <i class="fab fa-microsoft"></i>
+                                ASP.NET Core MVC
+                            </span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="conference-tag">
-                    المؤتمر العلمي الدولي للابتكار الرقمي
+                <!-- بطاقة معلومات الاتصال -->
+                <div class="enhanced-detail-card">
+                    <div class="detail-title-enhanced">
+                        <i class="fas fa-address-card"></i>
+                        معلومات الاتصال
+                    </div>
+                    <div class="detail-content-enhanced">
+                        <div class="contact-links">
+                            <a href="mailto:rehamhawasss@gmail.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                                Mail
+                            </a>
+                            <a href="https://www.linkedin.com/in/reham-hassan-b79364399" target="_blank" class="contact-link">
+                                <i class="fab fa-linkedin"></i>
+                             linkedin
+                            </a>
+                          
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <!-- المشروع -->
-            <div class="project-section">
-                <div class="section-heading">المشروع الحصري</div>
-                <div class="project-description">
-                    نظام إدارة تدريب شامل للمعهد الليبي للمالية العامة، يجمع بين الذكاء الاصطناعي وتجربة المستخدم المتطورة لخلق منظومة تدريبية ذكية وقابلة للتطور. تصميم معماري مرن يدعم التحول الرقمي الشامل.
-                </div>
+        </div>
+        
+        <!-- قسم المشاريع المحسن -->
+        <div class="enhanced-projects-section">
+            <div class="enhanced-section-header">
+                <h2 class="enhanced-section-title">المشاريع المهنية</h2>
             </div>
             
-            <!-- لوحة الإجراءات -->
-            <div class="action-panel">
-                <div class="section-heading">استكشاف النظام</div>
-                <div class="button-grid">
-                    <button class="cinematic-button" onclick="showDemo()">
-                        <div class="button-icon">⏵</div>
-                        <div>
-                            <div class="button-text">العرض الحي</div>
-                            <div class="button-subtext">تجربة النظام التفاعلية</div>
+            <div class="enhanced-projects-grid">
+                <!-- مشروع المعهد الليبي للمالية العامة -->
+                <div class="enhanced-project-card">
+                    <div class="project-header-enhanced">
+                        <div class="project-icon-enhanced">
+                            <i class="fas fa-university"></i>
                         </div>
-                    </button>
+                        <h3 class="project-title-enhanced">نظام إدارة التدريب الرقمي</h3>
+                        <div class="project-subtitle-enhanced">المعهد الليبي للمالية العامة</div>
+                    </div>
                     
-                    <button class="cinematic-button" onclick="showArchitecture()">
-                        <div class="button-icon">◷</div>
-                        <div>
-                            <div class="button-text">الهندسة المعمارية</div>
-                            <div class="button-subtext">بنية النظام المتطورة</div>
+                    <div class="project-content-enhanced">
+                        <p class="project-description-enhanced">
+                            نظام إدارة تدريب متكامل يجمع بين تقنيات حديثة وتجربة مستخدم متطورة لخلق منظومة تدريبية ذكية. تصميم معماري مرن يدعم التحول الرقمي الشامل للمؤسسات التعليمية والتدريبية.
+                        </p>
+                        
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <div class="highlight-text">أتمتة العمليات التدريبية</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="highlight-text">تحسين تجربة المستخدم</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="highlight-text">تقارير وتحليلات متقدمة</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-expand-arrows-alt"></i>
+                                </div>
+                                <div class="highlight-text">قابلية التوسع والنمو</div>
+                            </div>
                         </div>
-                    </button>
+                    </div>
                     
-                    <button class="cinematic-button" onclick="showInterface()">
-                        <div class="button-icon">□</div>
-                        <div>
-                            <div class="button-text">واجهات النظام</div>
-                            <div class="button-subtext">التصميم والتجربة</div>
+                    <div class="project-footer-enhanced">
+                        <button class="enhanced-project-button" onclick="openInteractiveSystem('training-system')">
+                            <i class="fas fa-play-circle"></i>
+                            استكشاف النظام التفاعلي
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- مشروع نادي اتحاد الجمارك -->
+                <div class="enhanced-project-card">
+                    <div class="project-header-enhanced">
+                        <div class="project-icon-enhanced">
+                            <i class="fas fa-futbol"></i>
                         </div>
-                    </button>
+                        <h3 class="project-title-enhanced">الموقع الإخباري للنادي</h3>
+                        <div class="project-subtitle-enhanced">نادي اتحاد الجمارك</div>
+                    </div>
                     
-                    <button class="cinematic-button" onclick="showImpact()">
-                        <div class="button-icon">⇈</div>
-                        <div>
-                            <div class="button-text">الأثر المؤسسي</div>
-                            <div class="button-subtext">تحليل العوائد</div>
+                    <div class="project-content-enhanced">
+                        <p class="project-description-enhanced">
+                            منصة رقمية حديثة لنشر أخبار وأنشطة نادي اتحاد الجمارك، تهدف إلى تحسين الحضور الرقمي للنادي وتقديم محتوى منظم وسهل الوصول للجمهور والمتابعين. نظام متكامل لإدارة المحتوى الرياضي.
+                        </p>
+                        
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="highlight-text">تحسين الحضور الرقمي</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-newspaper"></i>
+                                </div>
+                                <div class="highlight-text">نظام إدارة أخبار متكامل</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="highlight-text">تصميم متجاوب لجميع الأجهزة</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="highlight-text">قاعدة بيانات مركزية</div>
+                            </div>
                         </div>
-                    </button>
+                    </div>
+                    
+                    <div class="project-footer-enhanced">
+                        <button class="enhanced-project-button" onclick="openInteractiveSystem('club-website')">
+                            <i class="fas fa-play-circle"></i>
+                            استكشاف النظام التفاعلي
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-            <!-- لوحة الاتصال -->
-            <div class="contact-panel">
-                <div class="section-heading">نقاط الاتصال</div>
-                <div class="contact-grid">
-                    <a href="mailto:rehamhawasss@gmail.com" class="contact-tile">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="contact-label">البريد الإلكتروني</div>
-                            <div class="contact-description">للمراسلات الرسمية</div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://www.linkedin.com/in/reham-hassan-b79364399" target="_blank" class="contact-tile">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="contact-label">LinkedIn</div>
-                            <div class="contact-description">الملف المهني</div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://wa.me/218941432002" target="_blank" class="contact-tile">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.297.297-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.011-.57-.011-.198 0-.52.074-.792.371-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.76.983.998-3.675-.236-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.004 5.45-4.438 9.88-9.888 9.88m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.333.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.333 11.893-11.893 0-3.18-1.24-6.162-3.495-8.411"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="contact-label">WhatsApp</div>
-                            <div class="contact-description">للتواصل المباشر</div>
-                        </div>
-                    </a>
-                    
-                    <button class="contact-tile" onclick="showCollaboration()">
-                        <div class="contact-icon">⊕</div>
-                        <div>
-                            <div class="contact-label">فرص التعاون</div>
-                            <div class="contact-description">شراكات مستقبلية</div>
-                        </div>
-                    </button>
+        </div>
+    </div>
+    
+    <!-- نظام العرض التفاعلي للمعهد الليبي للمالية العامة -->
+    <div id="training-system-interactive" class="interactive-display-system">
+        <div class="interactive-container">
+            <div class="interactive-header">
+                <div>
+                    <h2 class="interactive-title">نظام إدارة التدريب الرقمي</h2>
+                    <div class="interactive-subtitle">المعهد الليبي للمالية العامة | رحلة تحول التدريب الرقمي</div>
                 </div>
+                <button class="close-interactive" onclick="closeInteractiveSystem()">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
             
-            <!-- عرض المحتوى -->
-            <div id="content-display" class="content-display"></div>
+            <div class="interactive-nav">
+                <a href="#" class="nav-tab active" onclick="switchTab(event, 'demo-tab')">رحلة داخل المنظومة</a>
+                <a href="#" class="nav-tab" onclick="switchTab(event, 'arch-tab')">الهندسة المعمارية</a>
+                <a href="#" class="nav-tab" onclick="switchTab(event, 'impact-tab')">الأثر المؤسسي</a>
+            </div>
             
-            <!-- التذييل -->
-            <div class="cinematic-footer">
-                <div>رحلة تحول التدريب الرقمي | رهام حسن حواص</div>
-                <div style="margin-top: 8px; font-size: 13px;">جميع الحقوق محفوظة © 2023</div>
+            <div class="interactive-content">
+                <!-- تبويب التجربة الحية -->
+                <div id="demo-tab" class="tab-content active">
+                    <h3 class="content-title">تجربة النظام الحية</h3>
+                   <div class="media-container">
+  <video controls autoplay muted loop playsinline>
+    <source src="videos/training-system-tour.mp4" type="video/mp4">
+    المتصفح لا يدعم تشغيل الفيديو
+  </video>
+</div> 
+<div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h4 class="feature-title">التنقل السريع</h4>
+                            <p class="feature-desc">تصميم بديهي يسمح بالوصول إلى أي وظيفة في أقل من 3 نقرات</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4 class="feature-title">البحث الذكي</h4>
+                            <p class="feature-desc">نظام بحث متقدم مع تصفية ذكية وتوصيات تلقائية</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4 class="feature-title">التقارير الفورية</h4>
+                            <p class="feature-desc">إنشاء تقارير تفصيلية في ثوانٍ مع رسومات بيانية تفاعلية</p>
+                        </div>
+                    </div>
+                </div>
+                    
+                   
+                   
+                
+                <!-- تبويب الهندسة المعمارية -->
+                <div id="arch-tab" class="tab-content">
+                    <h3 class="content-title">الهندسة المعمارية للنظام</h3>
+                    <div class="media-container">
+                        <div style="padding: 40px; background: linear-gradient(135deg, #2C74B3, #205295); color: white; text-align: center; border-radius: var(--border-radius);">
+                            <i class="fas fa-sitemap" style="font-size: 70px; margin-bottom: 25px; color: var(--baby-blue);"></i>
+                            <h4 style="font-size: 26px; margin-bottom: 15px;">بنية النظام المتعددة الطبقات</h4>
+                            <p style="font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto;">
+                                تصميم معماري مرن يدعم التوسع والتطوير المستقبلي.
+                                كل طبقة مستقلة وقابلة للترقية دون التأثير على النظام ككل.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h4 class="feature-title">طبقة العرض</h4>
+                            <p class="feature-desc">واجهات مستخدم تفاعلية مع تصميم متجاوب لجميع الأجهزة</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4 class="feature-title">طبقة الأعمال</h4>
+                            <p class="feature-desc">منطق العمل الرئيسي وقواعد المعالجة والإدارة</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4 class="feature-title">طبقة البيانات</h4>
+                            <p class="feature-desc">قواعد بيانات آمنة وقابلة للتطوير مع نسخ احتياطي تلقائي</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4 class="feature-title">نظام الأمان</h4>
+                            <p class="feature-desc">طبقة أمان متعددة المستويات مع تشفير كامل للبيانات</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- تبويب الأثر المؤسسي -->
+                <div id="impact-tab" class="tab-content">
+                    <h3 class="content-title">التحول المؤسسي والأثر</h3>
+                    
+                    <div class="impact-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">40%</div>
+                            <div class="stat-label">زيادة الإنتاجية</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">60%</div>
+                            <div class="stat-label">تخفيض الوقت</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">85%</div>
+                            <div class="stat-label">تحسين الدقة</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">90%</div>
+                            <div class="stat-label">رضا المستخدمين</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, rgba(224, 244, 255, 0.5), rgba(135, 196, 255, 0.2)); border-radius: var(--border-radius);">
+                        <h4 style="color: var(--primary-blue); margin-bottom: 15px; font-size: 20px;">الأثر الإيجابي للنظام</h4>
+                        <p style="color: var(--text-dark); line-height: 1.8; margin-bottom: 15px;">
+                            يتوقع أن يحقق النظام تحسينات كبيرة في عدة جوانب من عمل المؤسسة، من الكفاءة التشغيلية إلى رضا المستخدمين.
+                        </p>
+                        
+                        <div class="feature-grid" style="margin-top: 20px;">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <h4 class="feature-title">توفير التكاليف</h4>
+                                <p class="feature-desc">تخفيض النفقات التشغيلية بنسبة تصل إلى 35%</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h4 class="feature-title">سرعة القرار</h4>
+                                <p class="feature-desc">تسريع عملية اتخاذ القرارات بنسبة 50%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نظام العرض التفاعلي لنادي اتحاد الجمارك -->
+    <div id="club-website-interactive" class="interactive-display-system">
+        <div class="interactive-container">
+            <div class="interactive-header">
+                <div>
+                    <h2 class="interactive-title">الموقع الإخباري للنادي</h2>
+                    <div class="interactive-subtitle">نادي اتحاد الجمارك | منصة رقمية شاملة</div>
+                </div>
+                <button class="close-interactive" onclick="closeInteractiveSystem()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="interactive-nav">
+                <a href="#" class="nav-tab active" onclick="switchTab(event, 'club-demo-tab')">عرض الموقع الحي</a>
+                <a href="#" class="nav-tab" onclick="switchTab(event, 'club-features-tab')">مميزات النظام</a>
+                <a href="#" class="nav-tab" onclick="switchTab(event, 'club-tech-tab')">التقنيات المستخدمة</a>
+            </div>
+            
+            <div class="interactive-content">
+                <!-- تبويب العرض الحي -->
+                <div id="club-demo-tab" class="tab-content active">
+                    <h3 class="content-title">تجربة الموقع الحي</h3>
+                    <div class="media-container">
+                        <div style="padding: 40px; background: linear-gradient(135deg, #10B981, #059669); color: white; text-align: center; border-radius: var(--border-radius);">
+                            <i class="fas fa-futbol" style="font-size: 70px; margin-bottom: 25px; color: #BBF7D0;"></i>
+                            <h4 style="font-size: 26px; margin-bottom: 15px;">منصة رياضية متكاملة</h4>
+                            <p style="font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto;">
+                                موقع إخباري رياضي يقدم تجربة مستخدم فريدة لمتابعي نادي اتحاد الجمارك.
+                                تصميم عصري وسهل الاستخدام يلبي جميع احتياجات النادي الرياضي.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <h4 class="feature-title">نظام إدارة الأخبار</h4>
+                            <p class="feature-desc">نشر وتحديث الأخبار الرياضية بسهولة وسرعة</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h4 class="feature-title">جدول المباريات</h4>
+                            <p class="feature-desc">عرض تفاصيل المباريات القادمة والسابقة</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <h4 class="feature-title">معرض الوسائط</h4>
+                            <p class="feature-desc">معرض صور وفيديوهات خاص بأحداث النادي</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- تبويب مميزات النظام -->
+                <div id="club-features-tab" class="tab-content">
+                    <h3 class="content-title">مميزات النظام</h3>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h4 class="feature-title">واجهة إدارة سهلة</h4>
+                            <p class="feature-desc">لوحة تحكم بديهية لإدارة جميع محتويات الموقع</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4 class="feature-title">تصميم متجاوب</h4>
+                            <p class="feature-desc">تجربة مستخدم ممتازة على جميع الأجهزة</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4 class="feature-title">بحث متقدم</h4>
+                            <p class="feature-desc">إمكانية البحث في جميع محتويات الموقع</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <h4 class="feature-title">مشاركة اجتماعية</h4>
+                            <p class="feature-desc">مشاركة المحتوى على جميع وسائل التواصل</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 25px; background: rgba(16, 185, 129, 0.1); border-radius: var(--border-radius);">
+                        <h4 style="color: var(--primary-blue); margin-bottom: 15px;">دوري في المشروع</h4>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 12px; background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius);">
+                                <i class="fas fa-check-circle" style="color: var(--success);"></i>
+                                <span>تحليل الموقع الحالي للنادي وتحديد الاحتياجات</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 12px; background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius);">
+                                <i class="fas fa-check-circle" style="color: var(--success);"></i>
+                                <span>تصميم قاعدة البيانات وهيكل النظام</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 12px; background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius);">
+                                <i class="fas fa-check-circle" style="color: var(--success);"></i>
+                                <span>بناء النظام باستخدام ASP.NET Core MVC</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 12px; background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius);">
+                                <i class="fas fa-check-circle" style="color: var(--success);"></i>
+                                <span>تصميم واجهة مستخدم احترافية وجذابة</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 12px; background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius);">
+                                <i class="fas fa-check-circle" style="color: var(--success);"></i>
+                                <span>تطوير نظام إدارة أخبار </span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 12px; background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius);">
+                                <i class="fas fa-check-circle" style="color: var(--success);"></i>
+                                <span>اختبار النظام وتدريب المشرفين عليه</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- تبويب التقنيات المستخدمة -->
+                <div id="club-tech-tab" class="tab-content">
+                    <h3 class="content-title">التقنيات المستخدمة</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin: 25px 0;">
+                        <div style="padding: 25px; background: linear-gradient(135deg, rgba(10, 38, 71, 0.05), rgba(20, 66, 114, 0.1)); border-radius: var(--border-radius); text-align: center; border: 1px solid rgba(10, 38, 71, 0.1); transition: var(--transition);">
+                            <i class="fab fa-microsoft" style="font-size: 50px; color: var(--light-blue); margin-bottom: 15px;"></i>
+                            <div style="font-weight: 700; color: var(--primary-blue); margin-bottom: 10px;">ASP.NET Core MVC</div>
+                            <div style="font-size: 14px; color: var(--text-light);">إطار عمل متطور لبناء تطبيقات الويب</div>
+                        </div>
+                        <div style="padding: 25px; background: linear-gradient(135deg, rgba(10, 38, 71, 0.05), rgba(20, 66, 114, 0.1)); border-radius: var(--border-radius); text-align: center; border: 1px solid rgba(10, 38, 71, 0.1); transition: var(--transition);">
+                            <i class="fas fa-database" style="font-size: 50px; color: var(--light-blue); margin-bottom: 15px;"></i>
+                            <div style="font-weight: 700; color: var(--primary-blue); margin-bottom: 10px;">Entity Framework Core</div>
+                            <div style="font-size: 14px; color: var(--text-light);">نظام ORM متقدم لإدارة قواعد البيانات</div>
+                        </div>
+                        <div style="padding: 25px; background: linear-gradient(135deg, rgba(10, 38, 71, 0.05), rgba(20, 66, 114, 0.1)); border-radius: var(--border-radius); text-align: center; border: 1px solid rgba(10, 38, 71, 0.1); transition: var(--transition);">
+                            <i class="fas fa-server" style="font-size: 50px; color: var(--light-blue); margin-bottom: 15px;"></i>
+                            <div style="font-weight: 700; color: var(--primary-blue); margin-bottom: 10px;">SQL Server</div>
+                            <div style="font-size: 14px; color: var(--text-light);">نظام إدارة قواعد بيانات قوي وآمن</div>
+                        </div>
+                        <div style="padding: 25px; background: linear-gradient(135deg, rgba(10, 38, 71, 0.05), rgba(20, 66, 114, 0.1)); border-radius: var(--border-radius); text-align: center; border: 1px solid rgba(10, 38, 71, 0.1); transition: var(--transition);">
+                            <i class="fab fa-html5" style="font-size: 50px; color: var(--light-blue); margin-bottom: 15px;"></i>
+                            <div style="font-weight: 700; color: var(--primary-blue); margin-bottom: 10px;">HTML5 / CSS3 / Bootstrap</div>
+                            <div style="font-size: 14px; color: var(--text-light);">تقنيات الواجهة الأمامية الحديثة</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // إنشاء الجسيمات السينمائية
-        function createParticles() {
-            const container = document.getElementById('particles');
-            const count = 30;
+        // دالة لفتح النظام التفاعلي
+        function openInteractiveSystem(systemType) {
+            // إغلاق أي نظام مفتوح حالياً
+            closeInteractiveSystem();
             
-            for (let i = 0; i < count; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
+            // فتح النظام المطلوب
+            const systemElement = document.getElementById(`${systemType}-interactive`);
+            if (systemElement) {
+                systemElement.style.display = 'block';
+                document.body.style.overflow = 'hidden';
                 
-                const size = Math.random() * 6 + 2;
-                const posX = Math.random() * 100;
-                const delay = Math.random() * 20;
-                const duration = 15 + Math.random() * 15;
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${posX}%`;
-                particle.style.animationDelay = `${delay}s`;
-                particle.style.animationDuration = `${duration}s`;
-                
-                container.appendChild(particle);
+                // إعادة تعيين التبويب النشط
+                const firstTab = systemElement.querySelector('.nav-tab');
+                if (firstTab) {
+                    const tabId = firstTab.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    switchTab({ preventDefault: () => {} }, tabId);
+                }
             }
         }
         
-        // تأثيرات تفاعلية للعناصر
-        function addHoverEffects() {
-            const buttons = document.querySelectorAll('.cinematic-button, .contact-tile');
-            
-            buttons.forEach(button => {
-                button.addEventListener('mousemove', function(e) {
-                    const rect = this.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    this.style.setProperty('--mouse-x', `${x}px`);
-                    this.style.setProperty('--mouse-y', `${y}px`);
-                });
+        // دالة لإغلاق النظام التفاعلي
+        function closeInteractiveSystem() {
+            const systems = document.querySelectorAll('.interactive-display-system');
+            systems.forEach(system => {
+                system.style.display = 'none';
             });
+            document.body.style.overflow = 'auto';
         }
         
-        // عرض العرض الحي
-        function showDemo() {
-            const display = document.getElementById('content-display');
-            display.innerHTML = `
-                <div class="display-header">
-                    <div class="display-title">تجربة النظام الحية</div>
-                    <button class="close-display" onclick="closeDisplay()">×</button>
-                </div>
-                
-                <div class="media-container">
-                    <video controls autoplay muted poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
-                        <source src="demo.mp4" type="video/mp4">
-                        <source src="demo.webm" type="video/webm">
-                        متصفحك لا يدعم تشغيل الفيديو.
-                    </video>
-                </div>
-                
-                <div class="content-details">
-                    <div class="detail-heading">التجربة التفاعلية</div>
-                    <p>يعرض هذا الفيديو رحلة متكاملة داخل النظام، من تسجيل الدخول إلى إنشاء التقارير المتقدمة. كل تفاعل مصمم ليكون بديهياً وسريعاً.</p>
-                    
-                    <div class="feature-list">
-                        <div class="feature-item">التنقل السريع</div>
-                        <div class="feature-item">البحث الذكي</div>
-                        <div class="feature-item">التقارير الفورية</div>
-                        <div class="feature-item">الإشعارات الذكية</div>
-                    </div>
-                </div>
-            `;
+        // دالة للتبديل بين التبويبات
+        function switchTab(event, tabId) {
+            if (event && event.preventDefault) event.preventDefault();
             
-            display.scrollIntoView({ behavior: 'smooth' });
-            animateFeatures();
-        }
-        
-        // عرض الهندسة المعمارية
-        function showArchitecture() {
-            const display = document.getElementById('content-display');
-            display.innerHTML = `
-                <div class="display-header">
-                    <div class="display-title">الهندسة المعمارية للنظام</div>
-                    <button class="close-display" onclick="closeDisplay()">×</button>
-                </div>
-                
-                <div class="media-container">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="هندسة النظام">
-                </div>
-                
-                <div class="content-details">
-                    <div class="detail-heading">البنية التقنية</div>
-                    <p>يعتمد النظام على بنية متعددة الطبقات تسمح بالمرونة والتوسع. كل طبقة مستقلة وقابلة للترقية دون التأثير على النظام ككل.</p>
-                    
-                    <div class="feature-list">
-                        <div class="feature-item">طبقة العرض</div>
-                        <div class="feature-item">طبقة الأعمال</div>
-                        <div class="feature-item">طبقة البيانات</div>
-                        <div class="feature-item">واجهات API</div>
-                        <div class="feature-item">التخزين السحابي</div>
-                        <div class="feature-item">نظام الأمان</div>
-                    </div>
-                </div>
-            `;
+            // الحصول على النظام الحالي
+            const activeSystem = document.querySelector('.interactive-display-system[style*="display: block"]');
+            if (!activeSystem) return;
             
-            display.scrollIntoView({ behavior: 'smooth' });
-            animateFeatures();
-        }
-        
-        // عرض واجهات النظام
-        function showInterface() {
-            const display = document.getElementById('content-display');
-            display.innerHTML = `
-                <div class="display-header">
-                    <div class="display-title">تصميم واجهات النظام</div>
-                    <button class="close-display" onclick="closeDisplay()">×</button>
-                </div>
-                
-                <div class="media-container">
-                    <img src="1.jpg" alt="واجهات النظام" onerror="this.src='https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'">
-                </div>
-                
-                <div class="content-details">
-                    <div class="detail-heading">فلسفة التصميم</div>
-                    <p>واجهات النظام صُممت وفق مبادئ التصميم المرتكز على الإنسان، مع التركيز على البساطة والكفاءة والتجربة الممتعة.</p>
-                    
-                    <div class="feature-list">
-                        <div class="feature-item">التصميم المستجيب</div>
-                        <div class="feature-item">إمكانية الوصول</div>
-                        <div class="feature-item">التوجيه البصري</div>
-                        <div class="feature-item">التغذية الراجعة</div>
-                        <div class="feature-item">التدرج اللوني</div>
-                        <div class="feature-item">الطباعة المتقنة</div>
-                    </div>
-                </div>
-            `;
-            
-            display.scrollIntoView({ behavior: 'smooth' });
-            animateFeatures();
-        }
-        
-        // عرض الأثر المؤسسي
-        function showImpact() {
-            const display = document.getElementById('content-display');
-            display.innerHTML = `
-                <div class="display-header">
-                    <div class="display-title">التحول المؤسسي</div>
-                    <button class="close-display" onclick="closeDisplay()">×</button>
-                </div>
-                
-                <div class="media-container">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="التحول المؤسسي">
-                </div>
-                
-                <div class="content-details">
-                    <div class="detail-heading">مؤشرات الأداء</div>
-                    <p>يتوقع أن يحقق النظام تحسينات كبيرة في عدة جوانب من عمل المؤسسة، من الكفاءة التشغيلية إلى رضا المستخدمين.</p>
-                    
-                    <div class="feature-list">
-                        <div class="feature-item">زيادة الإنتاجية 40%</div>
-                        <div class="feature-item">تخفيض الوقت 60%</div>
-                        <div class="feature-item">تحسين الدقة 85%</div>
-                        <div class="feature-item">رضا المستخدمين 90%</div>
-                        <div class="feature-item">توفير التكاليف 35%</div>
-                        <div class="feature-item">سرعة القرار 50%</div>
-                    </div>
-                </div>
-            `;
-            
-            display.scrollIntoView({ behavior: 'smooth' });
-            animateFeatures();
-        }
-        
-        // عرض فرص التعاون
-        function showCollaboration() {
-            const display = document.getElementById('content-display');
-            display.innerHTML = `
-                <div class="display-header">
-                    <div class="display-title">شراكات المستقبل</div>
-                    <button class="close-display" onclick="closeDisplay()">×</button>
-                </div>
-                
-                <div class="content-details">
-                    <div class="detail-heading">مجالات التعاون</div>
-                    <p>أبحث عن شركاء يشاركونني الرؤية في إعادة تشكيل مستقبل التدريب المؤسسي. فرص التعاون تشمل:</p>
-                    
-                    <div class="feature-list">
-                        <div class="feature-item">التطوير المشترك</div>
-                        <div class="feature-item">البحث العلمي</div>
-                        <div class="feature-item">الاستشارات المتخصصة</div>
-                        <div class="feature-item">التدريب والتأهيل</div>
-                    </div>
-                    
-                    <div style="margin-top: 30px; padding: 25px; background: rgba(31, 171, 232, 0.08); border-radius: 12px; border: 1px solid rgba(31, 171, 232, 0.2);">
-                        <div class="detail-heading">تواصل معي</div>
-                        <div style="margin-top: 15px; display: grid; gap: 12px;">
-                            <div>البريد: rehamhawasss@gmail.com</div>
-                            <div>الهاتف: 218941432002+</div>
-                            <div>الموقع: المؤتمر العلمي الدولي</div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            display.scrollIntoView({ behavior: 'smooth' });
-            animateFeatures();
-        }
-        
-        // إغلاق العرض
-        function closeDisplay() {
-            document.getElementById('content-display').innerHTML = '';
-        }
-        
-        // تأثيرات تفاعلية
-        function animateFeatures() {
-            const features = document.querySelectorAll('.feature-item');
-            features.forEach((feature, index) => {
-                setTimeout(() => {
-                    feature.style.transform = 'translateX(0)';
-                    feature.style.opacity = '1';
-                }, index * 100);
+            // إزالة النشط من جميع التبويبات
+            const tabs = activeSystem.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
             });
+            
+            // إضافة النشط للتبويب المحدد
+            if (event.target) {
+                event.target.classList.add('active');
+            } else {
+                // إذا لم يكن هناك event.target (عند التهيئة الأولى)
+                const targetTab = activeSystem.querySelector(`[onclick*="${tabId}"]`);
+                if (targetTab) targetTab.classList.add('active');
+            }
+            
+            // إخفاء جميع المحتويات
+            const contents = activeSystem.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // إظهار المحتوى المحدد
+            const activeContent = activeSystem.querySelector(`#${tabId}`);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
         }
         
-        // تهيئة الصفحة
+        // تحسينات إضافية عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
-            addHoverEffects();
+            // إضافة تأثيرات للبطاقات عند التمرير
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
             
-            // تأثير تتبع الماوس
-            document.addEventListener('mousemove', function(e) {
-                const x = e.clientX / window.innerWidth;
-                const y = e.clientY / window.innerHeight;
-                
-                document.documentElement.style.setProperty('--mouse-x', x);
-                document.documentElement.style.setProperty('--mouse-y', y);
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // مراقبة البطاقات لإضافة تأثيرات
+            document.querySelectorAll('.enhanced-project-card, .enhanced-detail-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
             });
-            
-            // رسالة ترحيبية
-            setTimeout(() => {
-                const desc = document.querySelector('.project-description');
-                if (desc) {
-                    desc.innerHTML += '<p style="margin-top: 20px; font-style: italic; border-right: 2px solid rgba(31, 171, 232, 0.5); padding-right: 15px;">"نحو مستقبل تدريبي أكثر ذكاءً ومرونة"</p>';
+        });
+        
+        // إغلاق النظام التفاعلي بمفتاح ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeInteractiveSystem();
+            }
+        });
+        
+        // إغلاق النظام التفاعلي عند النقر خارج المحتوى
+        document.addEventListener('click', function(event) {
+            const interactiveSystems = document.querySelectorAll('.interactive-display-system');
+            interactiveSystems.forEach(system => {
+                if (system.style.display === 'block' && !system.querySelector('.interactive-container').contains(event.target) && 
+                    !event.target.closest('.enhanced-project-button')) {
+                    closeInteractiveSystem();
                 }
-            }, 1500);
-            
-            // إخفاء الانتقال
-            setTimeout(() => {
-                const transition = document.querySelector('.scene-transition');
-                if (transition) {
-                    transition.style.display = 'none';
-                }
-            }, 1500);
+            });
         });
     </script>
 </body>
-  </html>
-
-
-
-
+</html>
